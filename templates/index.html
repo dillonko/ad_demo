@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Demo</title>
+        <script src="{{ url_for('static', filename='js/jquery-2.1.4.js')}}"></script>
+        <script src="{{ url_for('static', filename='js/main.js')}}"></script>
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+
+        <form method="post" action="/userdata/" id="form">
+            <fieldset>
+                <legend>Onboarding form</legend>
+                <p><label>First name: <input type="text" name="first_name"></label></p>
+                <p><label>Last name: <input type="text" name="last_name"></label></p>
+                <p><label>Email<input type="text" name="your_email"></label></p>
+
+                <p>
+                    <label for="email_extension">Email extension</label>
+                    <datalist id="email_extension_options">
+                        <select name="email_extension">
+                            <option value="@shredz.com">@shredz.com</option>
+                            <option value="@skinny.com">@skinny.com</option>
+                            <option value="@flavorgod.com">@flavorgod.com</option>
+                            <option value="@fitlifegroup.com">@fitlifegroup.com</option>
+                            <option value="@itlifemediagroup.com">itlifemediagroup.com</option>
+                            <option value="@wehandleship.com">@wehandleship.com</option>
+                        </select>
+                        If other, please specify:
+                    </datalist>
+                    <input id="email_extension" name="email_extension" list="email_extension_options">
+                </p>
+
+                <p><label>Job Title: <input type="text" name="job_title"></label></p>
+                <p><label>Manager's email <input type="text" name="managers_email"></label></p>
+
+                <p>
+                    <label for="managers_email_extension">Email extension</label>
+                    <datalist id="managers_email_extension_options">
+                        <select name="managers_email_extension">
+                            <option value="@shredz.com">@shredz.com</option>
+                            <option value="@skinny.com">@skinny.com</option>
+                            <option value="@flavorgod.com">@flavorgod.com</option>
+                            <option value="@firlifegroup.com">@fitlifegroup.com</option>
+                            <option value="itlifemediagroup.com">itlifemediagroup.com</option>
+                            <option value="@wehandleship.com">@wehandleship.com</option>
+                        </select>
+                            if other, please specify:
+                    </datalist>
+                    <input type="text" id="managers_email_extension" name="managers_email_extension" list="managers_email_extension_options">
+                </p>
+
+                <p><label>Date <input type="datetime-local" name="date"></label></p>
+                <p><label>Password: <input type="password" name="password"></label></p>
+                <fieldset>
+                    <legend>Accounts needed:</legend>
+                    <p><input type="checkbox" name="accounts" id="account0" value="zenddesk">Zenddesk</p>
+                    <p><input type="checkbox" name="accounts" id="account1" value="wunderlist">Wunderlist</p>
+                    <p><input type="checkbox" name="accounts" id="account2" value="dropbox">Dropbox</p>
+                    <p><input type="checkbox" name="accounts" id="account3" value="Abobe_Suite">Adobe Suite</p>
+                    <p><input type="checkbox" name="accounts" id="account4" value="8x8">8x8</p>
+                    <p><input type="checkbox" name="accounts" id="account5" value="microsoft_office">Microsoft Office</p>
+                    <p><input type="checkbox" name="accounts" id="account6" value="wehandleship">Wehandleship</p>
+                    <p><input type="checkbox" name="accounts" id="account7" value="shredz_dash">Shreds Dash</p>
+                    <p><input type="checkbox" name="accounts" id="account8" value="flavor_dish">Flavor Dash</p>
+                    <p><input type="checkbox" name="accounts" id="account9" value="skinny_dash">Skinny Dash</p>
+                    <p><input type="checkbox" name="accounts" id="account10" value="amazon_seller_central_skinny">Amazon Seller Central (Skinny)</p>
+                    <p><input type="checkbox" name="accounts" id="account11" value="amazon.com_skinny">Amazon (Skinny)</p>
+                    <p><input type="checkbox" name="accounts" id="account12" value="amazon_seller_central_flavorgod">Amazon Seller Central (FlavorGod)</p>
+                    <p><input type="checkbox" name="accounts" id="account13" value="amazon.com_flavorgod">Amazon.com (FlavorGod)</p>
+                    <p><input type="checkbox" name="accounts" id="account14" value="amazon_seller_central_shredz">Amazon Seller Central (SHREDZ)</p>
+                    <p><input type="checkbox" name="accounts" id="account15" value="amazon.com_shredz">Amazon.com (SHREDS)</p>
+                </fieldset>
+
+                <p><label for="needs_a_computer">Does this employee need a computer?</label>
+                <datalist id="needs_a_computer_options">
+                    <select name="needs_a_computer">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                    If other, please specify:
+                </datalist>
+                    <input type="text" id="needs_a_computer" name="needs_a_computer" list="needs_a_computer_options">
+                </p>
+
+                <p>
+                    <label for="preferred_computer">What type of computer do they prefer</label>
+                    <datalist id="preferred_computer_options">
+                    <select name="preferred_computer">
+                        <option value="pc">PC</option>
+                        <option value="mac">Mac</option>
+                        <option value="none">None</option>
+                    </select>
+                        If other, please specify:
+                </datalist>
+                    <input type="text" id="preferred_computer" name="preferred_computer" list="preferred_computer_options">
+                </p>
+
+                <p>
+                    <label for="portable">What type of computer setup do they need?</label>
+                    <datalist id="portable_options">
+                    <select name="portable">
+                        <option value="laptop">Laptop</option>
+                        <option value="desktop">Desktop</option>
+                        <option value="none">None</option>
+                    </select>
+                        If other, please specify:
+                    </datalist>
+                    <input type="text" id="portable" name="portable" list="portable_options">
+                </p>
+
+                <p><label>note:<textarea name="note" id="myTextArea" rows="3" cols="80">Your comments and/or notes here</textarea></label></p>
+                <p><button type="submit">Submit</button></p>
+            </fieldset>
+        </form>
+    </body>
+
+</html>
