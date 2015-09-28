@@ -1,12 +1,13 @@
 
 import os
-
+import sqlite3
 
 
 # DB creation sql statements
 NEWHIRE_DB = {
-    "table": "DROP TABLE IF EXISTS newhire;",
-    "columns": """
+    "table": "UPDATE TABLE IF EXISTS newhire;",
+    "columns":
+    """
     CREATE TABLE newhire(
     id             INTEGER PRIMARY KEY,
     firstname      TEXT NOT NULL DEFAULT "",
